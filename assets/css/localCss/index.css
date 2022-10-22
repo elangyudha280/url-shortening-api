@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Poppins:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 :root {
+  --font: 'Poppins', sans-serif;
   --Cyan: hsl(180, 66%, 49%);
   --DarkViolet: hsl(257, 27%, 26%);
   --Gray: hsl(0, 0%, 75%);
-  --GrayishViolet: hsl(257, 7%, 63%)
---VeryDarkBlue: hsl(255, 11%, 22%)
---VeryDarkViolet: hsl(260, 8%, 14%)
---Red: hsl(0, 87%, 67%)
+  --GrayishViolet: hsl(257, 7%, 63%);
+  --VeryDarkBlue: hsl(255, 11%, 22%);
+  --VeryDarkViolet: hsl(260, 8%, 14%);
+  --Red: hsl(0, 87%, 67%);
 }
 
 * {
@@ -16,9 +16,147 @@
   box-sizing: border-box;
 }
 
-main.template{
-    position: relative;
-    width: 100%;
-    height: 200vh;
+main.template {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font);
+  height: 200vh;
+  padding-bottom: 1.5em;
+}
+
+/* CODE FOR NAVBAR */
+.navbar {
+  padding: 1.5em 0;
+}
+.navbar .container {
+  position: relative;
+}
+
+.navbar-brand {
+  margin-right: 2em;
+}
+
+.icon-bar {
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  color: var(--GrayishViolet);
+  display: none;
+}
+
+.nav-item {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.nav-item .navigasi {
+  display: flex;
+  gap: 2em;
+  flex: 1;
+  align-items: center;
+}
+.navigasi a {
+  text-decoration: none;
+  color: var(--GrayishViolet);
+  font-weight: 700;
+  transition: 0.4s;
+}
+.navigasi a:hover {
+  color: var(--VeryDarkViolet);
+}
+
+.nav-item .button-navigasi {
+  flex: 1;
+  display: flex;
+  gap: 1em;
+  justify-content: end;
+  align-items: center;
+}
+.button-navigasi a {
+  border-radius: 1.5em;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  padding: 0.5em 1.5em;
+}
+
+.button-navigasi .btn-navigasi-login {
+  color: var(--GrayishViolet);
+}
+
+.button-navigasi .btn-navigasi-signUp {
+  color: #fff;
+  background: var(--Cyan);
+  transition: 0.2s;
+}
+.btn-navigasi-signUp:hover {
+  opacity: 0.5;
+}
+
+/* MEDIA < 1000PX */
+@media screen and (max-width: 1000px) {
+  .navbar {
+    padding: 1em 0;
+  }
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .navbar div.nav-item-active {
+    display: initial;
+    opacity: 1;
+  }
+  .nav-item {
+    width: 90%;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    overflow: hidden;
+    background: var(--VeryDarkBlue);
+    border-radius: 0.7em;
+    display: none;
+    opacity: 0;
+    padding: 1em;
+  }
+  .nav-item .navigasi {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
     padding-bottom: 1.5em;
+    border-bottom: 1px solid var(--GrayishViolet);
+  }
+  .navigasi a {
+    color: #fff;
+  }
+  .nav-item .button-navigasi {
+    justify-content: center;
+    color: #fff;
+    padding-top: 1.2em;
+    flex-direction: column;
+  }
+  .button-navigasi .btn-navigasi-login {
+    color: #fff;
+  }
+  .icon-bar {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon-bar {
+    right: 1em;
+  }
+  .nav-item .button-navigasi a {
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
 }
