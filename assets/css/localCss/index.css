@@ -108,6 +108,7 @@ main.template {
 section.jumbotron {
   position: relative;
   width: 100%;
+  z-index: 1;
   height: auto;
   background: #fff;
   padding-top: 5em;
@@ -158,6 +159,68 @@ section.jumbotron {
   height: 100%;
 }
 
+/* /CODE FOR INPUT LINK */
+.c-input-link {
+  padding: 4em 4em;
+  background: url('../../images/bg-shorten-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--DarkViolet);
+  margin-top: -90px;
+  display: flex;
+  position: relative;
+  z-index: 3;
+  gap: 2em;
+  border-radius: 0.8em;
+}
+.c-input-link .item-input {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.item-input input {
+  border-radius: 0.5em;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 1em 2em;
+}
+.item-input .error-massage {
+  font-style: italic;
+  color: var(--Red);
+  position: absolute;
+  left: 0;
+  bottom: -2em;
+  font-weight: 500;
+  display: none;
+}
+.c-input-link .item-button {
+  overflow: hidden;
+  flex: 0.2;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.item-button .btn-short {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+  border: none;
+  color: #fff;
+  background: var(--Cyan);
+  transition: 0.2s;
+}
+.btn-short:active {
+  transform: scale(0.8);
+}
+.btn-short:hover {
+  opacity: 0.8;
+}
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
@@ -224,6 +287,14 @@ section.jumbotron {
   .item-img img {
     margin-right: -280px;
   }
+  .c-input-link {
+    padding: 4em 2em;
+    flex-direction: column;
+    gap: 1.8em;
+  }
+  .item-input .error-massage {
+    bottom: -1.6em;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -243,6 +314,10 @@ section.jumbotron {
   }
   .item-img img {
     margin-right: -200px;
+  }
+
+  .item-input input {
+    padding: 1em 1em;
   }
 }
 @media screen and (max-width: 500px) {
