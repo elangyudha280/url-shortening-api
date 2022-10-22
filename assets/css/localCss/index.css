@@ -221,6 +221,9 @@ section.jumbotron {
 .btn-short:hover {
   opacity: 0.8;
 }
+
+/* CODE FOR ITEM LINK */
+
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
