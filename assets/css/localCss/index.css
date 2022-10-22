@@ -111,7 +111,7 @@ section.jumbotron {
   height: auto;
   background: #fff;
   padding-top: 5em;
-  padding-bottom: 5em;
+  padding-bottom: 8em;
 }
 .jumbotron .c-jumbotron {
   display: grid;
