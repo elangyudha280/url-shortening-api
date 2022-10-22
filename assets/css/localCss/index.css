@@ -25,13 +25,16 @@ main.template {
   overflow-x: hidden;
   font-family: var(--font);
   height: 200vh;
+  background: var(--Gray);
   padding-bottom: 1.5em;
 }
 
 /* CODE FOR NAVBAR */
 .navbar {
   padding: 1.5em 0;
+  z-index: 100;
 }
+
 .navbar .container {
   position: relative;
 }
@@ -100,6 +103,61 @@ main.template {
   opacity: 0.5;
 }
 
+/* CODE FOR JUMBOTRON */
+
+section.jumbotron {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+.jumbotron .c-jumbotron {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 400px;
+}
+.c-jumbotron .jumbotron-item {
+  width: 100%;
+  height: 100%;
+}
+.item-desc {
+  padding-bottom: 1em;
+}
+.item-desc h2 {
+  font-weight: 700;
+  color: var(--VeryDarkBlue);
+}
+
+.item-desc p.desc {
+  font-size: 1.1em;
+  color: var(--GrayishViolet);
+  font-weight: 500;
+  margin-bottom: 2em;
+}
+.item-desc .btn-jumbotron {
+  padding: 0.5em 2em;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 1.5em;
+  transition: 0.4s;
+  background: var(--Cyan);
+}
+.btn-jumbotron:hover {
+  opacity: 0.7;
+}
+.item-img {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.item-img img {
+  width: 100%;
+  height: 100%;
+}
+
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
@@ -151,6 +209,21 @@ main.template {
   .icon-bar {
     display: initial;
   }
+  .jumbotron .c-jumbotron {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'footer';
+    grid-template-rows: auto;
+    gap: 50px;
+  }
+  .item-desc {
+    grid-area: footer;
+    text-align: center;
+  }
+  .item-img img {
+    margin-right: -280px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -161,5 +234,25 @@ main.template {
     width: 100%;
     display: grid;
     place-items: center;
+  }
+  section.jumbotron {
+    padding-top: 3em;
+  }
+  .item-desc {
+    text-align: center;
+  }
+  .item-img img {
+    margin-right: -200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .item-img img {
+    margin-right: -150px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .jumbotron .c-jumbotron {
+    max-width: 1200px;
   }
 }
