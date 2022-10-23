@@ -24,8 +24,8 @@ main.template {
   width: 100%;
   overflow-x: hidden;
   font-family: var(--font);
-  height: 200vh;
-  background: var(--Gray);
+  height: 400vh;
+  background: rgb(235, 235, 235);
   padding-bottom: 1.5em;
 }
 
@@ -264,6 +264,26 @@ section.jumbotron {
   align-items: center;
   justify-content: right;
 }
+
+/* section card  */
+section.c-card {
+  position: relative;
+  width: 100%;
+  border: 1px solid red;
+  margin-top: 5em;
+}
+.c-card .title-c-card {
+  font-family: var(--font);
+  font-weight: 700;
+}
+.c-card .desc-c-card {
+  text-align: center;
+  width: 450px;
+  margin: 0 auto;
+  color: var(--GrayishViolet);
+  font-weight: 500;
+}
+
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
@@ -382,6 +402,9 @@ section.jumbotron {
 @media screen and (max-width: 500px) {
   .item-img img {
     margin-right: -150px;
+  }
+  .c-card .desc-c-card {
+    width: auto;
   }
 }
 
