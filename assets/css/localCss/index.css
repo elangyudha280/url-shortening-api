@@ -383,6 +383,9 @@ section.banner {
   .navbar {
     padding: 1em 0;
   }
+  .navigasi a:hover {
+    color: var(--Gray);
+  }
   .navbar-brand {
     margin-right: 0;
   }
@@ -492,6 +495,9 @@ section.banner {
   .item-desc {
     text-align: center;
   }
+  .item-desc h2 {
+    font-size: 2em;
+  }
   .item-img img {
     margin-right: -200px;
   }
@@ -530,6 +536,9 @@ section.banner {
   }
 }
 @media screen and (max-width: 500px) {
+  .item-desc h2 {
+    font-size: 1.6em;
+  }
   .item-img img {
     margin-right: -150px;
   }
