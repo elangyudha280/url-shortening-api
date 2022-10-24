@@ -24,7 +24,7 @@ main.template {
   width: 100%;
   overflow-x: hidden;
   font-family: var(--font);
-  height: 400vh;
+  height: 800vh;
   background: rgb(235, 235, 235);
   padding-bottom: 1.5em;
 }
@@ -346,6 +346,38 @@ section.c-card {
   top: 6em;
 }
 
+/* CODE FOR BANNER */
+section.banner {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: 200px;
+  padding: 4em 1em;
+  background: url('../../images/bg-boost-desktop.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--DarkViolet);
+}
+.banner .title-banner {
+  color: #fff;
+  font-size: 2.7em;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+.btn-banner {
+  border-radius: 1.5em;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.8em 1.5em;
+  background: var(--Cyan);
+  transition: 0.3s;
+}
+.btn-banner:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
@@ -480,6 +512,22 @@ section.c-card {
   div.inner-link .short-link {
     justify-content: center;
   }
+  section.banner {
+    padding: 4em 0.5em;
+    background: url('../../images/bg-boost-mobile.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--DarkViolet);
+  }
+}
+@media screen and (max-width: 520px) {
+  .banner .title-banner {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+  }
 }
 @media screen and (max-width: 500px) {
   .item-img img {
@@ -492,7 +540,11 @@ section.c-card {
     padding: 3em 1.5em 1em;
   }
 }
-
+@media screen and (max-width: 320px) {
+  .banner .title-banner {
+    font-size: 1.4em;
+  }
+}
 @media screen and (min-width: 1400px) {
   .jumbotron .c-jumbotron {
     max-width: 1200px;
