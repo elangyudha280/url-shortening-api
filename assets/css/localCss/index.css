@@ -24,9 +24,9 @@ main.template {
   width: 100%;
   overflow-x: hidden;
   font-family: var(--font);
-  height: 800vh;
+  height: auto;
   background: rgb(235, 235, 235);
-  padding-bottom: 1.5em;
+  padding-bottom: 0;
 }
 
 /* CODE FOR NAVBAR */
@@ -378,6 +378,76 @@ section.banner {
   color: #fff;
 }
 
+/* code for footer */
+section.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  height: auto;
+  padding: 3em 0;
+  background: var(--VeryDarkViolet);
+}
+.footer .c-footer {
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr 0.6fr;
+  grid-auto-rows: auto;
+}
+.c-footer .item-footer {
+  position: relative;
+  width: 100%;
+}
+.c-footer .title-footer h2 {
+  color: #fff;
+  font-weight: 700;
+}
+.c-footer .nav-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 0.5em;
+}
+.nav-footer .item-nav-footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.item-nav-footer p {
+  color: #fff;
+  font-weight: 700;
+}
+.item-nav-footer ul {
+  list-style: none;
+  padding: 0;
+}
+.item-nav-footer ul li {
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+}
+.item-nav-footer ul li a {
+  text-decoration: none;
+  color: var(--Gray);
+  transition: 0.3s;
+}
+.item-nav-footer ul li a:hover {
+  color: var(--Cyan);
+}
+
+.icon-footer .nav-icon {
+  position: relative;
+  width: 100%;
+  padding: 0.2em 0.2em;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-icon a {
+  transition: 0.3s;
+  color: #fff;
+  font-size: 1.5em;
+}
+.nav-icon a:hover {
+  color: var(--Cyan);
+}
+
 /* MEDIA < 1000PX */
 @media screen and (max-width: 1000px) {
   .navbar {
@@ -478,6 +548,13 @@ section.banner {
     transform: translateX(-50%);
     height: 100%;
   }
+  .footer .c-footer {
+    grid-template-columns: 0.9fr 1.5fr;
+  }
+  .icon-footer .nav-icon {
+    justify-content: left;
+    gap: 1.5em;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -525,6 +602,21 @@ section.banner {
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--DarkViolet);
+  }
+  .footer .c-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2em;
+  }
+  .c-footer .nav-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 0.5em;
+  }
+  .icon-footer .nav-icon {
+    justify-content: center;
+    gap: 1.5em;
   }
 }
 @media screen and (max-width: 520px) {
