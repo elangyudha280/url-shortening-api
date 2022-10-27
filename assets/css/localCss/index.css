@@ -48,10 +48,16 @@ main.template {
   cursor: pointer;
   position: absolute;
   right: 0;
+  padding: 0.5em 0.6em;
+  border-radius: 50%;
+  transition: 0.3s;
   color: var(--GrayishViolet);
   display: none;
 }
-
+.icon-bar-active {
+  color: #fff;
+  background: var(--VeryDarkViolet);
+}
 .nav-item {
   width: 100%;
   position: relative;
