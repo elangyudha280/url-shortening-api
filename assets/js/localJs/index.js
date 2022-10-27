@@ -2,22 +2,73 @@
 
 let nav_item = document.querySelector('.nav-item');
 
-let icon_bar = document.querySelector('.icon-bar');
+let icon_hamburger_bar = document.querySelector('.icon-bar');
 
-icon_bar.addEventListener('click',()=>{
+icon_hamburger_bar.addEventListener('click',()=>{
   nav_item.classList.toggle('nav-item-active')
-  icon_bar.classList.toggle('icon-bar-active')
+  icon_hamburger_bar.classList.toggle('icon-bar-active')
 })
 // fitur api
-fetch('https://api.shrtco.de/v2/').then(Response => {
+
+let btnShort = document.querySelector('.btn-short');
+let inputShort =  document.querySelector('#input-short');
+let errorMessage = document.querySelector('.error-massage');
+let item_link = document.querySelector('.item-link')
+// function element html link item
+function linkItem(data_url){
+  
+        let fragment = `
+      <div class="inner-link">
+      <div class="item link">
+    ${data_url.result.original_link}
+      </div>
+      <div class="item short-link" id="short-link">
+      ${data_url.result.short_link}
+      </div>
+      <div class="item btn-coppy">
+        <button class="coppy">Coppy</button>
+      </div>
+  </div>
+      `
+  
+    return item_link.innerHTML += fragment
+}
+
+btnShort.addEventListener('click',function(){
+let inputShortValue = inputShort.value
+console.log(inputShortValue)
+fetch(`https://api.shrtco.de/v2/shorten?url=${inputShortValue}`).then(Response => {
   if(!Response.ok){
-    return Response.json()
+    inputShort.classList.add('input-error')
+    errorMessage.classList.add('error-massage-active')
+    return 'oops something wrong'
   }
+  
+    inputShort.classList.remove('input-error')
+  errorMessage.classList.remove('error-massage-active')
   return Response.json()
 })
-.then(e => {
-  console.log(e)
+.then(e => { 
+  linkItem(e)
 })
 .catch(err => {
   console.log(err)
+})
+
+})
+
+
+
+// event to copy link
+document.addEventListener('click', (e) => {
+  if(e.target.classList.contains('coppy') ){
+    let shortLink = document.getElementById('short-link').textContent.trim();
+    e.target.textContent = 'copied!'
+    e.target.classList.add('coppy-active')
+navigator.clipboard.writeText(shortLink);
+  }
+})
+
+window.addEventListener('load',()=>{
+  inputShort.value = '';
 })

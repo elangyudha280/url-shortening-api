@@ -194,7 +194,11 @@ section.jumbotron {
   width: 100%;
   outline: none;
   border: none;
+  transition: 0.4s;
   padding: 1em 2em;
+}
+.item-input .input-error {
+  box-shadow: 0 0 0 0.2em var(--Red);
 }
 .item-input .error-massage {
   font-style: italic;
@@ -203,7 +207,13 @@ section.jumbotron {
   left: 0;
   bottom: -2em;
   font-weight: 500;
-  display: none;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+.item-input span.error-massage-active {
+  visibility: visible;
+  opacity: 1;
 }
 .c-input-link .item-button {
   overflow: hidden;
@@ -261,6 +271,9 @@ section.jumbotron {
   background: var(--Cyan);
   color: #fff;
   transition: 0.3s;
+}
+.btn-coppy button.coppy-active {
+  background: var(--VeryDarkViolet);
 }
 .coppy:hover {
   opacity: 0.6;
