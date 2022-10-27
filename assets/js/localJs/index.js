@@ -1,10 +1,14 @@
 // fitur icon bar
 
-let icon_bar = document.querySelector('.icon-bar');
 let nav_item = document.querySelector('.nav-item');
-icon_bar.addEventListener('click', function () {
-  nav_item.classList.toggle('nav-item-active');
-  console.log('ok');
-});
+
+
+document.addEventListener('click',(e)=>{
+  if(e.target.classList.contains('icon-bar')){
+    nav_item.classList.add('nav-item-active');
+    return 
+  }
+  nav_item.classList.remove('nav-item-active');
+})
 
 // fitur api
