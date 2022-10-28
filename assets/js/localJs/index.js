@@ -26,7 +26,7 @@ function linkItem(data_url){
       ${data_url.result.short_link}
       </div>
       <div class="item btn-coppy">
-        <button class="coppy">Coppy</button>
+        <button class="coppy">copy</button>
       </div>
   </div>
       `
@@ -62,10 +62,11 @@ fetch(`https://api.shrtco.de/v2/shorten?url=${inputShortValue}`).then(Response =
 // event to copy link
 document.addEventListener('click', (e) => {
   if(e.target.classList.contains('coppy') ){
-    let shortLink = document.getElementById('short-link').textContent.trim();
     e.target.textContent = 'copied!'
     e.target.classList.add('coppy-active')
-navigator.clipboard.writeText(shortLink);
+
+    let shortLinkTarget = e.target.parentElement.previousElementSibling.textContent.trim();
+      navigator.clipboard.writeText(shortLinkTarget);
   }
 })
 
